@@ -3,7 +3,6 @@ import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Toaster } from '@/components/ui/sonner'
 import './globals.css'
-import {GoogleAnalytics} from `@next/third-parties/google`;
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const geistMono = Geist_Mono({
@@ -55,7 +54,6 @@ export default function RootLayout({
         <Toaster />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
-      <GoogleAnalytics gaId= "G-5JWWE1CZZD"/>
     </html>
   )
 }
