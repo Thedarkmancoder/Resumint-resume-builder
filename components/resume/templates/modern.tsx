@@ -12,6 +12,8 @@ export function ModernTemplate({ data, accent, fontScale }: TemplateProps) {
         color: "#1f2937",
         fontSize: fs(13),
         lineHeight: 1.5,
+        wordBreak: "break-word",
+        overflowWrap : "anywhere",
       }}
     >
       {/* Header band */}
@@ -39,9 +41,9 @@ export function ModernTemplate({ data, accent, fontScale }: TemplateProps) {
         </div>
       </div>
 
-      <div style={{ padding: "32px 40px", display: "flex", gap: 32 }}>
+      <div style={{ padding: "32px 40px", display: "flex", gap: 32, flexWrap : "wrap", }}>
         {/* Main column */}
-        <div style={{ flex: 2, minWidth: 0 }}>
+        <div style={{ flex: 2, minWidth: 280 }}>
           {basics.summary && (
             <Section title="Profile" accent={accent} fs={fs}>
               <p style={{ margin: 0 }}>{basics.summary}</p>
@@ -95,7 +97,7 @@ export function ModernTemplate({ data, accent, fontScale }: TemplateProps) {
         </div>
 
         {/* Side column */}
-        <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ flex: 1, minWidth: 280 }}>
           {skills.length > 0 && (
             <Section title="Skills" accent={accent} fs={fs}>
               {skills.map((s) => (

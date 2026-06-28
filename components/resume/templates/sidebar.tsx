@@ -13,11 +13,21 @@ export function SidebarTemplate({ data, accent, fontScale }: TemplateProps) {
         fontSize: fs(13),
         lineHeight: 1.5,
         display: "flex",
+        flexWrap:"wrap",
         minHeight: "100%",
+        wordBreak:"break-word",
+        overflowWrap: "anywhere",
       }}
     >
       {/* Sidebar */}
-      <aside style={{ width: 250, flexShrink: 0, background: accent, color: "#fff", padding: "36px 26px" }}>
+      <aside style={{
+         width: 250, 
+         maxWidth:"100%",
+         flexShrink: 0, 
+         background: accent,
+          color: "#fff",
+           padding: "36px 26px",
+            }}>
         {basics.photo && (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -80,7 +90,11 @@ export function SidebarTemplate({ data, accent, fontScale }: TemplateProps) {
       </aside>
 
       {/* Main */}
-      <main style={{ flex: 1, minWidth: 0, padding: "40px 36px" }}>
+      <main style={{ 
+        flex: 1, 
+        minWidth: 280,
+         padding: "40px 36px" 
+         }}>
         <h1 style={{ fontSize: fs(28), fontWeight: 700, margin: 0, letterSpacing: "-0.02em" }}>
           {basics.fullName || "Your Name"}
         </h1>

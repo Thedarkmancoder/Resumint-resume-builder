@@ -23,7 +23,7 @@ export function Hero() {
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
 
           {/* Left Side */}
-          <div className="lg: -mt-33">
+          <div className="lg:-mt-33">
             <p className="max-w-md text-pretty text-lg leading-relaxed text-muted-foreground">
               Pick from professionally designed templates, edit with a live preview,
               and download a polished PDF. No sign-up, no watermark — your data

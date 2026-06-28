@@ -94,7 +94,7 @@ export function ElegantTemplate({ data, accent, fontScale }: TemplateProps) {
         </Section>
       )}
 
-      <div style={{ display: "flex", gap: 40 }}>
+      <div style={{ display: "flex", gap: 40 , flexWrap: "wrap"}}>
         {education.length > 0 && (
           <div style={{ flex: 1 }}>
             <Section title="Education" accent={accent} fs={fs} center>
@@ -134,7 +134,7 @@ export function ElegantTemplate({ data, accent, fontScale }: TemplateProps) {
       )}
 
       {(languages.length > 0 || certifications.length > 0) && (
-        <div style={{ display: "flex", gap: 40 }}>
+        <div style={{ display: "flex", gap: 40, flexWrap: "wrap" }}>
           {languages.length > 0 && (
             <div style={{ flex: 1 }}>
               <Section title="Languages" accent={accent} fs={fs} center>

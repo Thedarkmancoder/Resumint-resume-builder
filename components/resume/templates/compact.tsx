@@ -14,6 +14,8 @@ export function CompactTemplate({ data, accent, fontScale }: TemplateProps) {
         fontSize: fs(12),
         lineHeight: 1.45,
         padding: "34px 40px",
+        wordBreak: "break-word",
+        overflowWrap: "anywhere",
       }}
     >
       <header
@@ -21,6 +23,8 @@ export function CompactTemplate({ data, accent, fontScale }: TemplateProps) {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "flex-end",
+          flexWrap: "wrap",
+          gap: 10,
           borderBottom: `3px solid ${accent}`,
           paddingBottom: 12,
           marginBottom: 18,
@@ -32,7 +36,7 @@ export function CompactTemplate({ data, accent, fontScale }: TemplateProps) {
           </h1>
           {basics.title && <p style={{ margin: "2px 0 0", color: accent, fontWeight: 600, fontSize: fs(13) }}>{basics.title}</p>}
         </div>
-        <div style={{ textAlign: "right", fontSize: fs(11), color: "#555", lineHeight: 1.6 }}>
+        <div style={{ textAlign: "right", fontSize: fs(11), color: "#555", lineHeight: 1.6 , wordBreak: "normal", overflowWrap: "anywhere",}}>
           {contacts.map((c, i) => (
             <div key={i}>{c}</div>
           ))}
@@ -41,9 +45,9 @@ export function CompactTemplate({ data, accent, fontScale }: TemplateProps) {
 
       {basics.summary && <p style={{ margin: "0 0 16px", color: "#444" }}>{basics.summary}</p>}
 
-      <div style={{ display: "flex", gap: 28 }}>
+      <div style={{ display: "flex", gap: 28, flexWrap : "wrap" }}>
         {/* Left main */}
-        <div style={{ flex: 2, minWidth: 0 }}>
+        <div style={{ flex: 2, minWidth: 280 }}>
           {experience.length > 0 && (
             <Section title="Experience" accent={accent} fs={fs}>
               {experience.map((e) => (
@@ -96,7 +100,7 @@ export function CompactTemplate({ data, accent, fontScale }: TemplateProps) {
         </div>
 
         {/* Right rail */}
-        <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ flex: 1, minWidth: 250 }}>
           {skills.length > 0 && (
             <Section title="Skills" accent={accent} fs={fs}>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>

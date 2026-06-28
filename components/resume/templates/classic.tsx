@@ -26,7 +26,13 @@ export function ClassicTemplate({ data, accent, fontScale }: TemplateProps) {
             {basics.title}
           </p>
         )}
-        <div style={{ fontSize: fs(12), marginTop: 10, color: "#444" }}>{contacts.join("  ·  ")}</div>
+        <div style={{ fontSize: fs(12), marginTop: 10, color: "#444" , display : "flex", flexWrap: "wrap", justifyContent: "center", gap :6,}}>{contacts.map((c, i) =>(
+          <span key={i}>
+            {c}
+            {i !== contacts.length - 1 && " . "}
+          </span>
+        ))}
+          </div>
       </header>
 
       {basics.summary && (
@@ -94,7 +100,7 @@ export function ClassicTemplate({ data, accent, fontScale }: TemplateProps) {
         </Section>
       )}
 
-      <div style={{ display: "flex", gap: 40 }}>
+      <div style={{ display: "flex", gap: 40 , flexWrap: "wrap" }}>
         {languages.length > 0 && (
           <div style={{ flex: 1 }}>
             <Section title="Languages" accent={accent} fs={fs}>
